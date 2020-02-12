@@ -1,8 +1,9 @@
 # Simple Network Sync for PUN2
 ![](Docs/Img/SNS_DocumentHeader.jpg)
 
-**Current Pre-Beta Release:**  
-https://github.com/emotitron/SNS_PUN2/releases
+| **Current Pre-Beta Release:** | 
+|---|
+| https://github.com/emotitron/SNS_PUN2/releases |
 
 Author Contact:  
 davincarten@gmail.com
