@@ -1,19 +1,18 @@
 # Simple Network Sync for PUN2
+Many networking libraries available to Unity developers focus primarily on synchronization of fields and replicating events from one client to another. This often comes in the form of Syncvars and RPCs (Remote Procedure Calls). While this can lead to quick successes, it often becomes very entangled and cumbersome as the race conditions, cross dependencies and lack of deterministic order start to compound complexity. **In contrast, Simple Network Sync (SNS) extends PUN2 to operate on a simulation-based tick timing system that uses circular buffers**. 
+
+**SNS uses mixed-authority snapshot interpolation.** PUN2 is a relay environment, so it is a slightly different architecture than Server Authority, which systems like Photon Bolt employ. As there is no central state authority, authority is distributed. Players typically are the authority over objects they are in control of.
+
+**For example:** If a player shoots another, the shooter notifies the hit player’s health system of the hit. The hit player having authority over their own health applies the damage in response to the hit indication from the shooter. That hit player will also accordingly apply death, stun, etc. to themselves. It should be noted that this is inherently NOT cheat resistant. The PUN relay model is more about quick and easy dev, and is not the ideal library for highly competitive PVP games. Bolt or Quantum would be more suitable platforms for such games.
+
+**The SNS system focuses on using Unreliable UDP with Keyframe and Delta frames, similar to how video streams work.** Rather than using Acks to negotiate eventual consistency between clients and a server (which would become very cumbersome in a relay environment where every client would need to negotiate reliability with every other client), SNS uses keyframes to achieve eventual consistency. Lost or late packets that produce disagreement in state between the owner and other clients will eventually resolve when forced updates (keyframes or changes) arrive.
+
+# Simple Network Sync (SNS) Highlights:
 * [Base set of “Just Works” Components and Interfaces](#Components)
 * [Simulation-based tick system with discrete deferred timings](#Simulation)
 * [Numbered State Buffers (Circular Buffer)](#Buffers)
 * [Serialization to a unified bitpacked byte\[\] array](#Serialization)
 * [Syncvars tied to the core simulation tick timing system](#Syncvars)
-
-Many networking libraries available to Unity developers focus primarily on synchronization of fields and replicating events from one client to another. This often comes in the form of Syncvars and RPCs (Remote Procedure Calls). While this can lead to quick successes, it often becomes very entangled and cumbersome as the race conditions, cross dependencies and lack of deterministic order start to compound complexity. **In contrast, Simple Network Sync (SNS) extends PUN2 to operate on a simulation-based tick timing system that uses circular buffers**. 
-
-**SNS uses mixed-authority snapshot interpolation.** PUN2 is a relay environment, so it is a slightly different architecture than Server Authority, which systems like Photon Bolt employ. As there is no central state authority, authority is distributed. Players typically are the authority over objects they are in control of.
-
-For example: If a player shoots another, the shooter notifies the hit player’s health system of the hit. The hit player having authority over their own health applies the damage in response to the hit indication from the shooter. That hit player will also accordingly apply death, stun, etc. to themselves. It should be noted that this is inherently NOT cheat resistant. The PUN relay model is more about quick and easy dev, and is not the ideal library for highly competitive PVP games. Bolt or Quantum would be more suitable platforms for such games.
-
-The SNS system focuses on using Unreliable UDP with Keyframe and Delta frames, similar to how video works. Rather than using Acks to negotiate eventual consistency between clients and a server (which would become very cumbersome in a relay environment where every client would need to negotiate reliability with every other client), SNS uses keyframes to achieve eventual consistency. Lost or late packets that produce disagreement in state between the owner and other clients will eventually resolve when forced updates (keyframes or changes) arrive.
-
-# Simple Network Sync (SNS) Highlights:
 ## <a name="Components"></a>Base set of “Just Works” Components and Interfaces
 The first and most obvious benefit of the new extension library is the quantity of code that exists in the form of interoperational components. Without writing a single line of code you can have a networked scene that utilizes any combination of synced:
 * Transforms
