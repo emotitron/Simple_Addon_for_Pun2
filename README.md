@@ -8,7 +8,7 @@
 Author Contact:  
 davincarten@gmail.com
 
-PhotonEngine Discord: *(Author's handle is ****emotitron****)*
+PhotonEngine Discord: *(Author's handle is ****emotitron****)*  
 https://discord.gg/egaRfd8  
 
 
