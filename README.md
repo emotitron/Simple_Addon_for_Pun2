@@ -11,6 +11,7 @@ davincarten@gmail.com
 PhotonEngine Discord: *(Author's handle is ****emotitron****)*  
 https://discord.gg/egaRfd8  
 
+[SNS for PUN Documentation](https://docs.google.com/document/d/1ySmkOBsL0qJnIk7iN9lbXPlfmYTGkN7JFgKDBdqj9e8/edit?usp=sharing)
 
 [SNS Tutorial](https://docs.google.com/document/d/1moPBIt8cNe-h1uG01pvaOZQvrIjZfSBfDmVa793X6AQ/edit#)
 
