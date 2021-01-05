@@ -1,19 +1,7 @@
 # Simple Network Sync for PUN2
 ![](Docs/Img/SNS_DocumentHeader.jpg)
 
-| **Current Pre-Beta Release:** |
-|---|
-| https://github.com/emotitron/SNS_PUN2/releases |
-
-Author Contact:  
-davincarten@gmail.com
-
-PhotonEngine Discord: *(Author's handle is ****emotitron****)*  
-https://discord.gg/egaRfd8  
-
-[SNS for PUN Documentation](https://docs.google.com/document/d/1ySmkOBsL0qJnIk7iN9lbXPlfmYTGkN7JFgKDBdqj9e8/edit?usp=sharing)
-
-[SNS Tutorial](https://docs.google.com/document/d/1moPBIt8cNe-h1uG01pvaOZQvrIjZfSBfDmVa793X6AQ/edit#)
+## Simple is now out of Beta and is part of Pun2. Just download the latest Photon Pun2 from the Unity Asset Store, and it is included.
 
 ----
 Many networking libraries available to Unity developers focus primarily on synchronization of fields and replicating events from one client to another. This often comes in the form of Syncvars and RPCs (Remote Procedure Calls). While this can lead to quick successes, it often becomes very entangled and cumbersome as the race conditions, cross dependencies and lack of deterministic order start to compound complexity. **In contrast, Simple Network Sync (SNS) extends PUN2 to operate on a simulation-based tick timing system that uses circular buffers**. 
