@@ -1,10 +1,10 @@
-# Simple Network Sync for PUN2
+# Simple Addon for PUN2
 ![](Docs/Img/SNS_DocumentHeader.jpg)
 
-## Simple is now out of Beta and is part of Pun2. Just download the latest Photon Pun2 from the Unity Asset Store, and it is included.
+## Simple was included briefly with Pun2, but future updates will be hosted here.
 
 ----
-Many networking libraries available to Unity developers focus primarily on synchronization of fields and replicating events from one client to another. This often comes in the form of Syncvars and RPCs (Remote Procedure Calls). While this can lead to quick successes, it often becomes very entangled and cumbersome as the race conditions, cross dependencies and lack of deterministic order start to compound complexity. **In contrast, Simple Network Sync (SNS) extends PUN2 to operate on a simulation-based tick timing system that uses circular buffers**. 
+Many networking libraries available to Unity developers focus primarily on synchronization of fields and replicating events from one client to another. This often comes in the form of Syncvars and RPCs (Remote Procedure Calls). While this can lead to quick successes, it often becomes very entangled and cumbersome as the race conditions, cross dependencies and lack of deterministic order start to compound complexity. **In contrast, Simple extends PUN2 to operate on a simulation-based tick timing system that uses circular buffers**. 
 
 **SNS uses mixed-authority snapshot interpolation.** PUN2 is a relay environment, so it is a slightly different architecture than Server Authority, which systems like Photon Bolt employ. As there is no central state authority, authority is distributed. Players typically are the authority over objects they are in control of.
 
@@ -12,7 +12,7 @@ Many networking libraries available to Unity developers focus primarily on synch
 
 **The SNS system focuses on using Unreliable UDP with Keyframe and Delta frames, similar to how video streams work.** Rather than using Acks to negotiate eventual consistency between clients and a server (which would become very cumbersome in a relay environment where every client would need to negotiate reliability with every other client), SNS uses keyframes to achieve eventual consistency. Lost or late packets that produce disagreement in state between the owner and other clients will eventually resolve when forced updates (keyframes or changes) arrive.
 
-# Simple Network Sync (SNS) Highlights:
+# Simple Addon Highlights:
 * [Base set of “Just Works” Components and Interfaces](#Components)
 * [Simulation-based tick system with discrete deferred timings](#Simulation)
 * [Numbered State Buffers (Circular Buffer)](#Buffers)
