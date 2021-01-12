@@ -2,6 +2,13 @@
 ![](Docs/Img/SNS_DocumentHeader.jpg)
 
 ## Simple was included briefly with Pun2, but future updates will be hosted here.
+https://github.com/emotitron/Simple_Addon_for_Pun2/releases
+
+## Documentation
+https://dev-doc.photonengine.com/en-us/pun/current/simple/simpleoverview
+
+## Tutorial
+https://dev-doc.photonengine.com/en-us/pun/current/simple/simple-tutorial
 
 ----
 Many networking libraries available to Unity developers focus primarily on synchronization of fields and replicating events from one client to another. This often comes in the form of Syncvars and RPCs (Remote Procedure Calls). While this can lead to quick successes, it often becomes very entangled and cumbersome as the race conditions, cross dependencies and lack of deterministic order start to compound complexity. **In contrast, Simple extends PUN2 to operate on a simulation-based tick timing system that uses circular buffers**. 
