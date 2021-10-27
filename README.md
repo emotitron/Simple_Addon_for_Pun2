@@ -1,6 +1,8 @@
 # Simple Addon for PUN2
 ![](Docs/Img/SNS_DocumentHeader.jpg)
 
+# This library is now deprecated and no longer officially supported by Exit Games and will not be recieving updates to maintain compatibility with new versions of Unity or PUN. New users are recommended to use Photon Fusion instead.
+
 ## Simple was included briefly with Pun2, but future updates will be hosted here.
 https://github.com/emotitron/Simple_Addon_for_Pun2/releases
 
